@@ -5,48 +5,51 @@
 
 #include "Date.h"
 
-using namespace std;
+using std::string;
 
 enum Sex { M, F };
 
 class Person {
-private:
-    string _last_name;
-    string _first_name;
-    Date* _date_of_birth;
-    Sex _sex;
-
 public:
-    Person(const string& last_name, const string& first_name, Date* date_of_birth, Sex sex)
+    Person(string* last_name, string* first_name, Date* date_of_birth, const Sex& sex)
         : _last_name(last_name),
           _first_name(first_name),
           _date_of_birth(date_of_birth),
           _sex(sex) {
     }
     ~Person() {
+        delete _last_name;
+        delete _first_name;
         delete _date_of_birth;
     }
 
-    string get_last_name() const {
-        return _last_name;
+    string getLastname() const {
+        string last_name = *_last_name;
+        return last_name;
     }
 
-    string get_first_name() const {
-        return _first_name;
+    string getFirstName() const {
+        string first_name = *_first_name;
+        return first_name;
     }
 
-    Date* get_date_of_birth() const {
+    Date* getDateOfBirth() const {
         return _date_of_birth;
     }
 
-    Sex get_sex() const {
+    Sex getSex() const {
         return _sex;
     }
 
-    string get_full_name() const {
-        return get_last_name() + " " + get_first_name();
+    string getFullName() const {
+        return getLastname() + " " + getFirstName();
     }
-};
 
+private:
+    string* _last_name;
+    string* _first_name;
+    Date* _date_of_birth;
+    Sex _sex;
+};
 
 #endif //UNIVERSITY_PERSON_H

@@ -4,4 +4,7 @@ project(university)
 set(CMAKE_CXX_STANDARD 20)
 
 add_executable(university main.cpp
-        Date.h)
+        Person.h
+        Date.h
+        Teacher.h
+        ProgramErrors.h)

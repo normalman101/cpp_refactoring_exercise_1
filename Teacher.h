@@ -6,15 +6,11 @@
 
 #include "Person.h"
 
-using namespace std;
+using std::string, std::vector;
 
 class Teacher : public Person {
-private:
-    vector<string>* _subjects;
-    string _faculty;
-
 public:
-    Teacher(const string& last_name, const string& first_name, Date* date_of_birth, Sex sex, const string& faculty)
+    Teacher(string *last_name, string *first_name, Date *date_of_birth, Sex sex, string *faculty)
         : Person(last_name, first_name, date_of_birth, sex),
           _faculty(faculty) {
         _subjects = new vector<string>();
@@ -22,22 +18,26 @@ public:
 
     ~Teacher() {
         delete _subjects;
-
         ~Person();
     }
 
-    void add_subject(const string& subject) {
+    void addSubject(const string &subject) {
         _subjects->push_back(subject);
     }
 
-    vector<string>* get_subjects() const {
-        return _subjects;
+    vector<string> getSubjects() const {
+        vector<string> subjects = *_subjects;
+        return subjects;
     }
 
-    string get_faculty() const {
-        return _faculty;
+    string getFaculty() const {
+        string faculty = *_faculty;
+        return faculty;
     }
+
+private:
+    vector<string> *_subjects;
+    string *_faculty;
 };
-
 
 #endif //UNIVERSITY_TEACHER_H
