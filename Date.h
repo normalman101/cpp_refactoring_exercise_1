@@ -18,7 +18,7 @@ public:
           _year{year} {
         {
             if (month > 12 || month < 1) {
-                throw ERROR_MONTH;
+                throw ERROR_MONTH; //Test
             }
 
             switch (month) {
