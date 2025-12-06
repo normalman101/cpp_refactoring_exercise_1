@@ -18,45 +18,27 @@ public:
           _year{year} {
         {
             if (month > 12 || month < 1) {
-                throw ERROR_MONTH; //Test
+                throw ERROR_MONTH;
             }
 
             switch (month) {
-                case 1:
-                    checkDay(day, DAYS::END_DAY_31);
-                    break;
                 case 2:
                     checkDay(day, DAYS::END_DAY_28);
                     break;
+                case 1:
                 case 3:
+                case 5:
+                case 7:
+                case 8:
+                case 10:
+                case 12:
                     checkDay(day, DAYS::END_DAY_31);
                     break;
                 case 4:
-                    checkDay(day, DAYS::END_DAY_30);
-                    break;
-                case 5:
-                    checkDay(day, DAYS::END_DAY_31);
-                    break;
                 case 6:
-                    checkDay(day, DAYS::END_DAY_30);
-                    break;
-                case 7:
-                    checkDay(day, DAYS::END_DAY_31);
-                    break;
-                case 8:
-                    checkDay(day, DAYS::END_DAY_31);
-                    break;
                 case 9:
-                    checkDay(day, DAYS::END_DAY_30);
-                    break;
-                case 10:
-                    checkDay(day, DAYS::END_DAY_31);
-                    break;
                 case 11:
                     checkDay(day, DAYS::END_DAY_30);
-                    break;
-                case 12:
-                    checkDay(day, DAYS::END_DAY_31);
                     break;
                 default:
                     break;
