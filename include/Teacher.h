@@ -8,7 +8,7 @@
 
 class Teacher : public Person {
 public:
-    Teacher(std::string &last_name, std::string &first_name, Date *date_of_birth, const SEX sex, std::string &faculty)
+    explicit Teacher(std::string &last_name, std::string &first_name, Date *date_of_birth, const SEX sex, std::string &faculty)
         : Person(last_name, first_name, date_of_birth, sex),
           _faculty(std::move(faculty)),
           _subjects(std::make_unique<std::vector<std::string> >()) {

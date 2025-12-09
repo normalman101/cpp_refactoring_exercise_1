@@ -12,7 +12,7 @@ enum class MONTH {
 
 class Date {
 public:
-    Date(const int day, const int month, const int year)
+    explicit Date(const int day, const int month, const int year)
         : _day(checkDayForRange(day, month)),
           _month(checkMonthForRange(month)),
           _year(year) {

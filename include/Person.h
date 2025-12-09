@@ -10,7 +10,7 @@ enum class SEX { M, F };
 
 class Person {
 public:
-    Person(std::string &last_name, std::string &first_name, Date *date_of_birth, const SEX sex)
+    explicit Person(std::string &last_name, std::string &first_name, Date *date_of_birth, const SEX sex)
         : _last_name(std::move(checkSurname(last_name))),
           _first_name(std::move(checkName(first_name))),
           _date_of_birth(date_of_birth),
