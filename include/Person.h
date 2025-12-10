@@ -1,10 +1,11 @@
 #pragma once
 
-#include "Date.h"
-#include "ProgramErrors.h"
 #include <string>
 #include <utility>
 #include <memory>
+
+#include "Date.h"
+#include "ProgramErrors.h"
 
 enum class SEX { M, F };
 
